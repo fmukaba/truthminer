@@ -1,5 +1,11 @@
+import { SearchBarContainer, SearchInput } from "./searchbar.styled";
+
 const Searchbar = () => {
-  return <div> SearchBar </div>;
+  return (
+    <SearchBarContainer>
+      <SearchInput placeholder="Search..." />
+    </SearchBarContainer>
+  );
 };
 
 export default Searchbar;

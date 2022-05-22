@@ -3,7 +3,17 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { FallBack, NotFound } from "../components";
 import { Navbar } from "../components/Navbar";
-import { About, Article, Articles, Books, Home, Theme, Themes } from "../pages";
+import {
+  About,
+  Article,
+  Articles,
+  Books,
+  Collection,
+  Home,
+  Lyrical,
+  Theme,
+  Themes,
+} from "../pages";
 import { ErrorBoundary } from "react-error-boundary";
 
 const Routing = () => {
@@ -22,6 +32,8 @@ const Routing = () => {
           <Route path="/article/:title" element={<Article />} />
           <Route path="/themes" element={<Themes />} />
           <Route path="/theme/:title" element={<Theme />} />
+          <Route path="/lyrical" element={<Lyrical />} />
+          <Route path="/collection/:title" element={<Collection />} />
           <Route path="/books" element={<Books />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
