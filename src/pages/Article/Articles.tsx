@@ -1,6 +1,6 @@
 import { collection, getDocs } from "@firebase/firestore";
 import { FC, useEffect } from "react";
-import db from "../../firebase";
+import { db } from "../../firebase";
 
 const Article: FC = () => {
   const articlesCollectionRef = collection(db, "articles");

@@ -15,11 +15,13 @@ import {
   Themes,
 } from "../pages";
 import { ErrorBoundary } from "react-error-boundary";
+import { FirestoreContext } from "../context";
 
 const Routing = () => {
   const location = useLocation();
+  const data = null;
   return (
-    <>
+    <FirestoreContext.Provider value={data}>
       <Helmet>
         <link rel="icon" href={``} />
         <title>christian Reflections/ Insight</title>
@@ -39,7 +41,7 @@ const Routing = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ErrorBoundary>
-    </>
+    </FirestoreContext.Provider>
   );
 };
 
