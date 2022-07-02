@@ -1,8 +1,12 @@
 // import { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { FallBack, NotFound } from "../components";
+import { FallBack, NotFound, Spacer } from "../components";
 import { Navbar } from "../components/Navbar";
+import { ErrorBoundary } from "react-error-boundary";
+import { awaitFirestoreData, FirestoreContext } from "../context";
+import { useCallback, useEffect, useState } from "react";
+import { FirestoreData } from "../interfaces";
 import {
   About,
   Article,
@@ -14,19 +18,34 @@ import {
   Theme,
   Themes,
 } from "../pages";
-import { ErrorBoundary } from "react-error-boundary";
-import { FirestoreContext } from "../context";
 
 const Routing = () => {
+  let data: FirestoreData = {
+    articles: [],
+    lyricals: [],
+    themes: [],
+  };
+
+  const [firestoreData, setFirestoreData] = useState(data);
   const location = useLocation();
-  const data = null;
+
+  const getData = useCallback(async () => {
+    data = await awaitFirestoreData();
+    setFirestoreData(data);
+  }, []);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
   return (
-    <FirestoreContext.Provider value={data}>
+    <FirestoreContext.Provider value={firestoreData}>
       <Helmet>
         <link rel="icon" href={``} />
         <title>christian Reflections/ Insight</title>
       </Helmet>
       <Navbar />
+      <Spacer />
       <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
         <Routes>
           <Route path="/" element={<Home />} />

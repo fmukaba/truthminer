@@ -1,20 +1,10 @@
-import { collection, getDocs } from "@firebase/firestore";
-import { FC, useEffect } from "react";
-import { db } from "../../firebase";
+import { FC, useContext } from "react";
+import { FirestoreContext } from "../../context";
 
-const Article: FC = () => {
-  const articlesCollectionRef = collection(db, "articles");
-  useEffect(() => {
-    console.log("started");
-    const getArticles = async () => {
-      const data = await getDocs(articlesCollectionRef);
-      console.log(data);
-    };
-
-    getArticles();
-  });
-
+const Articles: FC = () => {
+  const data = useContext(FirestoreContext);
+  console.log(data?.articles);
   return <div> List of all articles </div>;
 };
 
-export default Article;
+export default Articles;

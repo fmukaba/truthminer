@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavbarWrapper = styled.header`
-  display: inline-block;   
+  display: inline-block;
   position: fixed;
   width: 100%;
   top: 0;
-  height: 63px;
-  box-shadow: 0 .2rem 0.1rem rgba(0,0,0,.15)!important;
+  height: 64px;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2) !important;
   z-index: 10000;
 `;
 
@@ -15,6 +15,7 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
   .icon-wrapper {
     display: flex;
     align-items: center;
@@ -28,6 +29,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
+  width: 72px;
   display: inline;
   margin-left: 30px;
   img {
@@ -37,14 +39,16 @@ export const LogoWrapper = styled.div`
   }
 `;
 export const TabsContainer = styled.div`
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
   a {
-    margin-right: 10px;
-
+    padding: 22px 16px;
+    text-decoration: none;
+    color: #333335;
   }
-`
+`;
 export const RightSide = styled.div`
-  display: inline
-`
-
-
+  display: inline;
+`;

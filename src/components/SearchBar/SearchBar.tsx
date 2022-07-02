@@ -1,9 +1,16 @@
-import { SearchBarContainer, SearchInput } from "./searchbar.styled";
-
+import {
+  IconWrapper,
+  SearchBarContainer,
+  SearchInput,
+} from "./searchbar.styled";
+import { Search } from "react-feather";
 const Searchbar = () => {
   return (
     <SearchBarContainer>
-      <SearchInput placeholder="Search..." />
+      <IconWrapper>
+        <Search size="16px" />
+      </IconWrapper>
+      <SearchInput placeholder="Placeholder text" />
     </SearchBarContainer>
   );
 };

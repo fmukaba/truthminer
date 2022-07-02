@@ -13,9 +13,11 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavbarContainer>
-        <LogoWrapper>
-          <img src={logo} alt="Logo" />
-        </LogoWrapper>
+        <Link to="/">
+          <LogoWrapper>
+            <img src={logo} alt="Logo" />
+          </LogoWrapper>
+        </Link>
         <TabsContainer>
           <Link to="/articles">Articles</Link>
           <Link to="/lyrical">Lyrical</Link>
