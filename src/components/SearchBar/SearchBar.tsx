@@ -10,7 +10,7 @@ const Searchbar = () => {
       <IconWrapper>
         <Search size="16px" />
       </IconWrapper>
-      <SearchInput placeholder="Placeholder text" />
+      <SearchInput placeholder="Search" />
     </SearchBarContainer>
   );
 };

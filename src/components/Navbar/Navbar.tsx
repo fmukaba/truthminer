@@ -1,5 +1,5 @@
 import Searchbar from "../SearchBar/SearchBar";
-import logo from "../assets/logo192.png";
+import logo from "../../assets/logo192.png";
 import {
   LogoWrapper,
   NavbarWrapper,
@@ -19,6 +19,7 @@ const Navbar = () => {
           </LogoWrapper>
         </Link>
         <TabsContainer>
+          {/* Use typography for text in links */}
           <Link to="/articles">Articles</Link>
           <Link to="/lyrical">Lyrical</Link>
           <Link to="/themes">Themes</Link>

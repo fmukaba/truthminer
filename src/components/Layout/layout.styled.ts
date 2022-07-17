@@ -17,7 +17,7 @@ import {
 } from "styled-system";
 
 export const LayoutWrapper = styled.div`
-  margin-top: 17px;
+  margin-top: 5px;
 `;
 
 export const LayoutContainer = styled.div`

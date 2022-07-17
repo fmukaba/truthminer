@@ -10,6 +10,7 @@ export const getArticles = async () => {
     const article: Article = {
       id: doc.id,
       content: doc.data().content,
+      description: doc.data().description,
       title: doc.data().title,
       date_published: new Timestamp(
         doc.data().date_published.seconds,
