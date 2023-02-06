@@ -1,8 +1,9 @@
 import { FC, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { PageContent } from "../../components";
 import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { FirestoreContext } from "../../context";
+import { FirestoreContext } from "../../context/Context";
 import { Article } from "../../interfaces";
 import { Container, Description, Title, Footer } from "./styles";
 
@@ -12,16 +13,40 @@ const ArticleItem: FC<Article> = ({
   description,
   date_published,
 }) => {
+  const navigate = useNavigate();
   const goToArticle = () => {
-    // Navigate('article/id')
+    // navigate("article/id");
     // go to article page knowing id
   };
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const date = date_published.toDate();
+  const month = monthNames[date.getMonth()];
+  const formattedDate = `${month} ${date.getDay()}, ${date.getFullYear()} `;
   return (
-    <FlexBox flexDirection="row" align-items="flex-start" onClick={goToArticle}>
+    <FlexBox
+      key={id}
+      flexDirection="row"
+      align-items="flex-start"
+      onClick={goToArticle}
+    >
       <Container>
         <Title> {title} </Title>
         <Description>{description}</Description>
-        <Footer>{`${date_published.toDate()}`}</Footer>
+        <Footer>{formattedDate}</Footer>
       </Container>
     </FlexBox>
   );
@@ -61,7 +86,9 @@ const Articles: FC = () => {
     <Layout>
       <PageHeader title="Articles" />
       <PageContent>
-        <ArticleList articles={data?.articles} />
+        <FlexBox>
+          <ArticleList articles={data?.articles} />
+        </FlexBox>
       </PageContent>
     </Layout>
   );

@@ -1,8 +1,8 @@
 import { FC, useContext } from "react";
-import { FirestoreContext } from "../../context";
 import { Layout } from "../../components/Layout";
 import { FlexBox } from "../../components/Layout/layout.styled";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import { FirestoreContext } from "../../context/Context";
 
 const Themes: FC = () => {
   const data = useContext(FirestoreContext);

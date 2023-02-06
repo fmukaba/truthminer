@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { FallBack, NotFound, Spacer } from "../components";
 import { Navbar } from "../components/Navbar";
 import { ErrorBoundary } from "react-error-boundary";
-import { awaitFirestoreData, FirestoreContext } from "../context";
+import { awaitFirestoreData, FirestoreContext } from "../context/Context";
 import { useCallback, useEffect, useState } from "react";
 import { FirestoreData } from "../interfaces";
 import {

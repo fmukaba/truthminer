@@ -1,8 +1,8 @@
 import { collection, getDocs, Timestamp } from "@firebase/firestore";
 import { createContext } from "react";
-import { db } from "./firebase";
-import { FirestoreData } from "./interfaces";
-import { Article, Theme, Lyrical } from "./interfaces/models";
+import { db } from "../firebase";
+import { FirestoreData } from "../interfaces";
+import { Article, Theme, Lyrical } from "../interfaces/models";
 
 export const getArticles = async () => {
   const articles: Article[] = [];

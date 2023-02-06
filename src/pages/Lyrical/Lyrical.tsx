@@ -2,7 +2,7 @@ import { FC, useContext } from "react";
 import { Layout } from "../../components/Layout";
 import { FlexBox } from "../../components/Layout/layout.styled";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { FirestoreContext } from "../../context";
+import { FirestoreContext } from "../../context/Context";
 
 const Lyrical: FC = () => {
   const data = useContext(FirestoreContext);
