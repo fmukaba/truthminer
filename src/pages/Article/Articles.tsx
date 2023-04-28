@@ -14,9 +14,8 @@ const ArticleItem: FC<Article> = ({
   date_published,
 }) => {
   const navigate = useNavigate();
-  const goToArticle = () => {
-    // navigate("article/id");
-    // go to article page knowing id
+  const goToArticle = (id: string) => {
+    navigate(`/articles/${id}`);
   };
   const monthNames = [
     "January",
@@ -41,7 +40,7 @@ const ArticleItem: FC<Article> = ({
       key={id}
       flexDirection="row"
       align-items="flex-start"
-      onClick={goToArticle}
+      onClick={() => goToArticle(id || 'article-id-hyphenated')}
     >
       <Container>
         <Title> {title} </Title>
@@ -57,8 +56,9 @@ export type ArticleListProps = {
 
 const ArticleList: FC<ArticleListProps> = ({ articles }: ArticleListProps) => {
   if (articles) {
+    console.log(articles.length)
     return (
-      <FlexBox flexDirection="row" align-items="flex-start" mt={70}>
+      <FlexBox flexDirection="column" align-items="flex-start" mt={70} mb={70}  gap={70} >
         {articles.map((article) => {
           return (
             <ArticleItem
@@ -67,7 +67,7 @@ const ArticleList: FC<ArticleListProps> = ({ articles }: ArticleListProps) => {
               title={article.title}
               date_published={article.date_published}
               description={article.description}
-              content=""
+              content={article.content}
             />
           );
         })}

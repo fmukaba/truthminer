@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 110px;
+  height: 15vh;
   background-color: #faf7f2;
   display: flex;
   flex-direction: row;
@@ -10,6 +10,7 @@ export const Container = styled.div`
   padding: 40px 120px;
   gap: 24px;
   flex-wrap: wrap;
+  position: fixed;
 `;
 
 export const Title = styled.div`

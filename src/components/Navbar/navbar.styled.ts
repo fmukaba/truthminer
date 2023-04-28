@@ -6,6 +6,7 @@ export const NavbarWrapper = styled.header`
   width: 100%;
   top: 0;
   height: 64px;
+  background-color: white;
   box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2) !important;
   z-index: 10000;
 `;

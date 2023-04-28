@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
+  cursor: pointer;
 `;
 
 export const Title = styled.div`
@@ -30,4 +31,28 @@ export const Footer = styled.div`
   font-size: 12px;
   margin-top: 8px;
   width: 100%;
+`;
+
+export const TitleContainer = styled.div`
+  font-family: "NB International Pro";
+  font-style: normal;
+  font-size: 40px;
+`;
+
+export const ArticleContainer = styled.div`
+  font-family: "NB International Pro";
+  font-style: normal;
+  font-size: 12px;
+  position: absolute;
+  top: 20%;
+  padding: 10px;
+  margin-left: 18%;
+  margin-right: 18%;
+`;
+
+export const Content = styled.div`
+  font-family: "NB International Pro";
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 5%;
 `;

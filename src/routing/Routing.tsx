@@ -42,7 +42,7 @@ const Routing = () => {
     <FirestoreContext.Provider value={firestoreData}>
       <Helmet>
         <link rel="icon" href={``} />
-        <title>christian Reflections/ Insight</title>
+        <title>Wise-Nuggets</title>
       </Helmet>
       <Navbar />
       <Spacer />
@@ -50,9 +50,9 @@ const Routing = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
-          <Route path="/article/:title" element={<Article />} />
+          <Route path="/articles/:id" element={<Article />} />
           <Route path="/themes" element={<Themes />} />
-          <Route path="/theme/:title" element={<Theme />} />
+          <Route path="/themes/:title" element={<Theme />} />
           <Route path="/lyrical" element={<Lyrical />} />
           <Route path="/collection/:title" element={<Collection />} />
           <Route path="/books" element={<Books />} />
