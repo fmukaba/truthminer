@@ -5,7 +5,8 @@ export const Spacer = styled.div`
 `;
 
 export const PageContent = styled.div`
-  margin-top: 20vh;
+  position relative;
+  top: 25vh;
   margin-left: 120px;
   margin-right: 120px;
 `;

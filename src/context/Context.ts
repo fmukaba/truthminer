@@ -70,4 +70,9 @@ export const awaitFirestoreData = async () => {
   return data;
 };
 
-export const FirestoreContext = createContext<FirestoreData | null>(null);
+let data: FirestoreData = {
+  articles: [],
+  lyricals: [],
+  themes: [],
+};
+export const FirestoreContext = createContext<FirestoreData>(data);

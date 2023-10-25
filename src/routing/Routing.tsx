@@ -1,12 +1,14 @@
 // import { Suspense, lazy, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { ErrorBoundary } from "react-error-boundary";
 import { FallBack, NotFound, Spacer } from "../components";
 import { Navbar } from "../components/Navbar";
-import { ErrorBoundary } from "react-error-boundary";
+import { AppLoader } from "../components/Loader";
 import { awaitFirestoreData, FirestoreContext } from "../context/Context";
-import { useCallback, useEffect, useState } from "react";
 import { FirestoreData } from "../interfaces";
+import icon from '../assets/favicon.png' 
 import {
   About,
   Article,
@@ -19,6 +21,7 @@ import {
   Themes,
 } from "../pages";
 
+
 const Routing = () => {
   let data: FirestoreData = {
     articles: [],
@@ -27,11 +30,14 @@ const Routing = () => {
   };
 
   const [firestoreData, setFirestoreData] = useState(data);
+  const [isDataLoaded, setIsDataloaded] = useState(false);
   const location = useLocation();
 
   const getData = useCallback(async () => {
+    console.log('fetching data...');
     data = await awaitFirestoreData();
     setFirestoreData(data);
+    setIsDataloaded(true);
   }, []);
 
   useEffect(() => {
@@ -40,26 +46,30 @@ const Routing = () => {
 
   return (
     <FirestoreContext.Provider value={firestoreData}>
-      <Helmet>
-        <link rel="icon" href={``} />
-        <title>Wise-Nuggets</title>
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <link rel="icon" href={icon}  />
+          <title>Broken Pieces</title>
+        </Helmet>
+      </HelmetProvider>
       <Navbar />
       <Spacer />
+      {!isDataLoaded ? <AppLoader /> :
       <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:id" element={<Article />} />
           <Route path="/themes" element={<Themes />} />
-          <Route path="/themes/:title" element={<Theme />} />
+          <Route path="/themes/:id" element={<Theme />} />
           <Route path="/lyrical" element={<Lyrical />} />
-          <Route path="/collection/:title" element={<Collection />} />
+          <Route path="/collection/:id" element={<Collection />} />
           <Route path="/books" element={<Books />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ErrorBoundary>
+    }
     </FirestoreContext.Provider>
   );
 };
