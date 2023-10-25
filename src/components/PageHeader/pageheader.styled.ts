@@ -11,6 +11,7 @@ export const Container = styled.div`
   gap: 24px;
   flex-wrap: wrap;
   position: fixed;
+  z-index: 100;
 `;
 
 export const Title = styled.div`

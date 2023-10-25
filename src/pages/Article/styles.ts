@@ -12,37 +12,44 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   width: 100%;
-  font-family: "NB International Pro";
+  font-family: NB International Pro;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   color: #333335;
+  align-self: stretch;
 `;
 
 export const Description = styled.div`
   margin-top: 8px;
-  font-size: 16px;
   width: 100%;
+  font-family: NB International Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%
 `;
 
 export const Footer = styled.div`
-  font-family: "NB International Pro";
+  font-family: NB International Pro;
   font-style: normal;
   font-size: 12px;
+  font-weight: 400;
+  color: #656568;
   margin-top: 8px;
   width: 100%;
+  line-height: 130%
 `;
 
 export const TitleContainer = styled.div`
-  font-family: "NB International Pro";
+  font-family: NB International Pro;
+  font-size: 50px;
   font-style: normal;
-  font-size: 40px;
+  font-weight: 400;
+  line-height: 120%
 `;
 
 export const ArticleContainer = styled.div`
-  font-family: "NB International Pro";
-  font-style: normal;
-  font-size: 12px;
   position: absolute;
   top: 20%;
   padding: 10px;
@@ -51,8 +58,11 @@ export const ArticleContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  font-family: "NB International Pro";
-  font-style: normal;
-  font-size: 18px;
   margin-top: 5%;
+  color: #333335;
+  font-family: Atiza Text;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 `;
