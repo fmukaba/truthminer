@@ -50,13 +50,9 @@ const ArticleItem: FC<Article> = ({
     </FlexBox>
   );
 };
-export type ArticleListProps = {
-  articles: Article[] | undefined | null;
-};
 
-const ArticleList: FC<ArticleListProps> = ({ articles }: ArticleListProps) => {
-  if (articles && articles.length>0) {
-    console.log(articles.length)
+
+const ArticleList = ({ articles }: {articles: Article[]}) => {
     return (
       <FlexBox flexDirection="column" align-items="flex-start" mt={70} mb={70}  gap={70} >
         {articles.map((article) => {
@@ -73,14 +69,10 @@ const ArticleList: FC<ArticleListProps> = ({ articles }: ArticleListProps) => {
         })}
       </FlexBox>
     );
-  } else {
-    return <div> LOADING </div>;
-  }
 };
 
 const Articles: FC = () => {
   const data = useContext(FirestoreContext);
-  console.log(data.articles);
 
   return (
     <Layout>

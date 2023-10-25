@@ -25,7 +25,8 @@ const Lyrical: FC = () => {
           <GridWrapper>
             {data.lyricals.map((el: LyricalType) => {
               return (
-                <Card
+                <Card 
+                  key={el.id}
                   id={el.id}
                   title={el.title}
                   type={el.type}

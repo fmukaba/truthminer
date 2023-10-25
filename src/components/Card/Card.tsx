@@ -23,10 +23,7 @@ const StyledCard = styled.div`
 
 const Card: FC<Lyrical> = ({
   id,
-  title,
-  type,
   content,
-  date_published,
 }) => {
   const navigate = useNavigate();
 
