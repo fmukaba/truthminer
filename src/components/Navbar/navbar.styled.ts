@@ -49,6 +49,15 @@ export const TabsContainer = styled.div`
     text-decoration: none;
     color: #333335;
   }
+  .activeLink {
+    &: hover {
+      color: #3b6be3;
+    }
+  }
+
+  .activeLink.active {
+    color: #3b6be3;
+  }
 `;
 export const RightSide = styled.div`
   display: inline;

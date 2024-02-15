@@ -1,12 +1,24 @@
 import styled from "styled-components";
 
 export const FiltersContainer = styled.div`
-  height: 50px`;
+  height: 50px;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  background-color: #fff;
+  justify-content: center;
+`;
 
 export const GridWrapper = styled.div`
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(3, 30%);
+  margin-bottom: 100px;
+  margin-top: 50px;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
 `;
 
 export const Container = styled.div`
@@ -17,14 +29,27 @@ export const Container = styled.div`
   margin-right: 18%;
 `;
 
-export const TitleContainer = styled.div`
+export const Type = styled.div`
+  color: #000;
+  text-align: center;
+  font-family: NB International Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+`;
+
+export const Title = styled.div`
+  color: var(--light-text-text-primary, #333335);
   margin: auto;
   text-align: center;
   font-family: NB International Pro;
-  font-size: 50px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%
+  line-height: 120%;
 `;
 
 export const Content = styled.div`
