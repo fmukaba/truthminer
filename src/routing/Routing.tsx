@@ -1,14 +1,14 @@
 // import { Suspense, lazy, useEffect } from "react";
 import { useCallback, useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "react-error-boundary";
 import { FallBack, NotFound, Spacer } from "../components";
 import { Navbar } from "../components/Navbar";
 import { AppLoader } from "../components/Loader";
 import { awaitFirestoreData, FirestoreContext } from "../context/Context";
 import { FirestoreData } from "../interfaces";
-import icon from '../assets/favicon.png' 
+import icon from "../assets/favicon.png";
 import {
   About,
   Article,
@@ -20,7 +20,6 @@ import {
   Theme,
   Themes,
 } from "../pages";
-
 
 const Routing = () => {
   let data: FirestoreData = {
@@ -34,7 +33,7 @@ const Routing = () => {
   const location = useLocation();
 
   const getData = useCallback(async () => {
-    console.log('fetching data...');
+    console.log("fetching data...");
     data = await awaitFirestoreData();
     setFirestoreData(data);
     setIsDataloaded(true);
@@ -48,28 +47,30 @@ const Routing = () => {
     <FirestoreContext.Provider value={firestoreData}>
       <HelmetProvider>
         <Helmet>
-          <link rel="icon" href={icon}  />
+          <link rel="icon" href={icon} />
           <title>Broken Pieces</title>
         </Helmet>
       </HelmetProvider>
       <Navbar />
       <Spacer />
-      {!isDataLoaded ? <AppLoader /> :
-      <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:id" element={<Article />} />
-          <Route path="/themes" element={<Themes />} />
-          <Route path="/themes/:id" element={<Theme />} />
-          <Route path="/lyrical" element={<Lyrical />} />
-          <Route path="/collection/:id" element={<Collection />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </ErrorBoundary>
-    }
+      {!isDataLoaded ? (
+        <AppLoader />
+      ) : (
+        <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
+          <Routes>
+            <Route path="/" element={<Navigate to={"/articles"} />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:id" element={<Article />} />
+            <Route path="/themes" element={<Themes />} />
+            <Route path="/themes/:id" element={<Theme />} />
+            <Route path="/lyrical" element={<Lyrical />} />
+            <Route path="/collection/:id" element={<Collection />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
+      )}
     </FirestoreContext.Provider>
   );
 };

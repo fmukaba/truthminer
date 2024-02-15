@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100px;
+  width: 55vw;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -27,7 +26,7 @@ export const Description = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%
+  line-height: 150%;
 `;
 
 export const Footer = styled.div`
@@ -38,7 +37,7 @@ export const Footer = styled.div`
   color: #656568;
   margin-top: 8px;
   width: 100%;
-  line-height: 130%
+  line-height: 130%;
 `;
 
 export const TitleContainer = styled.div`
@@ -46,7 +45,7 @@ export const TitleContainer = styled.div`
   font-size: 50px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%
+  line-height: 120%;
 `;
 
 export const ArticleContainer = styled.div`
@@ -65,4 +64,10 @@ export const Content = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+`;
+
+export const StyledColumnDivider = styled.div`
+  height: 100%;
+  width: 1px;
+  background-color: #eee;
 `;

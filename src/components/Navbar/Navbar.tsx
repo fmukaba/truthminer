@@ -7,7 +7,7 @@ import {
   RightSide,
   NavbarContainer,
 } from "./navbar.styled";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -19,11 +19,18 @@ const Navbar = () => {
           </LogoWrapper>
         </Link>
         <TabsContainer>
-          {/* Use typography for text in links */}
-          <Link to="/articles">Articles</Link>
-          <Link to="/lyrical">Lyrical</Link>
-          {/* <Link to="/themes">Themes</Link> */}
-          <Link to="/about">About</Link>
+          <NavLink to="/articles" className="activeLink">
+            Articles
+          </NavLink>
+          <NavLink to="/lyrical" className="activeLink">
+            Lyrical
+          </NavLink>
+          <NavLink to="/themes" className="activeLink">
+            Themes
+          </NavLink>
+          <NavLink to="/about" className="activeLink">
+            About
+          </NavLink>
         </TabsContainer>
         <RightSide>
           <Searchbar />

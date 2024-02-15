@@ -2,7 +2,7 @@ import { FC, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { FirestoreContext } from "../../context/Context";
 import { NotFound } from "../../components";
-import { Container, Content, TitleContainer } from "../Lyrical/styles";
+import { Container, Content, Title, Type } from "../Lyrical/styles";
 
 
 const Collection: FC = () => {
@@ -13,10 +13,11 @@ const Collection: FC = () => {
   return (
     (targetLyrical? 
       <Container>
-        <TitleContainer> {targetLyrical.title} </TitleContainer>
+        <Type> {targetLyrical.type.toUpperCase()} </Type>
+        <Title> {targetLyrical.title} </Title>
         <Content dangerouslySetInnerHTML={{__html: targetLyrical.content }} style={{maxWidth: '100%'}} />
       </Container> 
-      :<NotFound />
+      : <NotFound />
     )
   );
 };
