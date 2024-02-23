@@ -6,11 +6,11 @@ import { FirestoreContext } from "../../context/Context";
 
 const Themes: FC = () => {
   const data = useContext(FirestoreContext);
-  console.log(data?.themes);
+  console.log(data.themes);
   return (
     <Layout>
       <PageHeader
-        title="Themes"
+        title="Gold"
         description="What the Bible says on different topics"
       />
       <FlexBox></FlexBox>

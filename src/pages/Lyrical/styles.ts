@@ -2,11 +2,46 @@ import styled from "styled-components";
 
 export const FiltersContainer = styled.div`
   height: 50px;
-  width: 100vw;
+  width: 100%;
   position: fixed;
+  display: flex;
+  flex-direction: row;
   z-index: 100;
   background-color: #fff;
+`;
+
+export const FilterText = styled.div`
+  display: flex;
+  margin: auto;
   justify-content: center;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const FiltersGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const FilterButton = styled.button<{ active: boolean }>`
+  margin: 10px 10px 10px 0px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  background: none;
+  border-radius: 20px;
+  font-size: 13px;
+  ${(props) =>
+    props.active &&
+    `
+      background-color: #ccc;
+    `}
 `;
 
 export const GridWrapper = styled.div`
@@ -14,7 +49,7 @@ export const GridWrapper = styled.div`
   grid-gap: 30px;
   grid-template-columns: repeat(3, 30%);
   margin-bottom: 100px;
-  margin-top: 50px;
+  margin-top: 70px;
 
   @media screen and (max-width: 1024px) {
     display: block;
@@ -42,7 +77,7 @@ export const Type = styled.div`
 `;
 
 export const Title = styled.div`
-  color: var(--light-text-text-primary, #333335);
+  color: #333335;
   margin: auto;
   text-align: center;
   font-family: NB International Pro;
@@ -63,4 +98,16 @@ export const Content = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+`;
+
+export const StyledRowDivider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #eeeeee;
+  grid-column: span 3;
+  margin: 10px 0;
+
+  @media (max-width: 1024px) {
+    display: none !important;
+  }
 `;

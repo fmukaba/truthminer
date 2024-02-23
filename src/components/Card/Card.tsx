@@ -6,12 +6,11 @@ import { Lyrical } from "../../interfaces";
 const StyledBlogCell = styled.div<{ isMiddleColumn: boolean }>`
   text-align: center;
   padding: 20px;
-  border: 1px solid transparent; s
-  transition: border 0.3s ease; 
+  border: 1px solid transparent;
+  transition: border 0.5s ease;
   cursor: pointer;
-
   &:hover {
-    border: 1px solid rgba(0, 0, 0, 0.12); 
+    border: 1px solid rgba(0, 0, 0, 0.12);
   }
 
   ${(props) =>
@@ -72,7 +71,7 @@ const Card: FC<CardProps> = ({ id, content, type, title, index }) => {
     bgColor = "#1F49B1";
   }
   const goTo = () => {
-    navigate(`/collection/${id}`);
+    navigate(`/gems/${id}`);
   };
 
   return (

@@ -26,7 +26,10 @@ export const Description = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 2em;
+  max-height: 12em;
 `;
 
 export const Footer = styled.div`
@@ -36,6 +39,7 @@ export const Footer = styled.div`
   font-weight: 400;
   color: #656568;
   margin-top: 8px;
+  margin-bottom: 20px;
   width: 100%;
   line-height: 130%;
 `;

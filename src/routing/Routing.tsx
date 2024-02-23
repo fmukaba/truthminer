@@ -1,6 +1,6 @@
 // import { Suspense, lazy, useEffect } from "react";
 import { useCallback, useEffect, useState } from "react";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "react-error-boundary";
 import { FallBack, NotFound, Spacer } from "../components";
@@ -15,7 +15,6 @@ import {
   Articles,
   Books,
   Collection,
-  Home,
   Lyrical,
   Theme,
   Themes,
@@ -48,7 +47,7 @@ const Routing = () => {
       <HelmetProvider>
         <Helmet>
           <link rel="icon" href={icon} />
-          <title>Broken Pieces</title>
+          <title>Truth Miner</title>
         </Helmet>
       </HelmetProvider>
       <Navbar />
@@ -58,15 +57,15 @@ const Routing = () => {
       ) : (
         <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
           <Routes>
-            <Route path="/" element={<Navigate to={"/articles"} />} />
-            <Route path="/articles" element={<Articles />} />
-            <Route path="/articles/:id" element={<Article />} />
-            <Route path="/themes" element={<Themes />} />
-            <Route path="/themes/:id" element={<Theme />} />
-            <Route path="/lyrical" element={<Lyrical />} />
-            <Route path="/collection/:id" element={<Collection />} />
+            <Route path="/" element={<Articles />} />
+            <Route path="/nuggets" element={<Articles />} />
+            <Route path="/nuggets/:id" element={<Article />} />
+            <Route path="/gold" element={<Themes />} />
+            <Route path="/gold/:id" element={<Theme />} />
+            <Route path="/gems" element={<Lyrical />} />
+            <Route path="/gems/:id" element={<Collection />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/prospector" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ErrorBoundary>

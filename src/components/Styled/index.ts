@@ -7,6 +7,8 @@ export const Spacer = styled.div`
 export const PageContent = styled.div`
   position absolute;
   top: calc(15vh + 144px);
-  margin-left: 120px;
-  margin-right: 120px;
+  margin: 0px 120px;
+   @media screen and (max-width: 600px) {
+    margin: 0px 60px;
+  }
 `;

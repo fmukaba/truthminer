@@ -13,7 +13,6 @@ export const NavbarWrapper = styled.header`
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 100%;
 
@@ -41,24 +40,69 @@ export const LogoWrapper = styled.div`
 `;
 export const TabsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
+  margin-left: 50px;
+  @media (max-width: 600px) {
+    display: none;
+  }
+
   a {
     padding: 22px 16px;
     text-decoration: none;
     color: #333335;
-  }
-  .activeLink {
     &: hover {
       color: #3b6be3;
     }
   }
 
-  .activeLink.active {
+  .active {
     color: #3b6be3;
   }
 `;
 export const RightSide = styled.div`
-  display: inline;
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+`;
+
+export const HamburgerIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  @media (max-width: 600px) {
+    position: relative;
+    right: 15px;
+    display: block;
+  }
+`;
+
+export const MobileNav = styled.div`
+  height: auto;
+  width: 100%;
+  position: absolute;
+  top: 64px;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0.4rem -0.4rem rgba(0, 0, 0, 0.2) !important;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+
+  a {
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      color: #3b6be3;
+      background-color: #f0f0f0;
+    }
+  }
+
+  .active {
+    color: #3b6be3;
+  }
 `;
