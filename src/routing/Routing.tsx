@@ -66,7 +66,7 @@ const Routing = () => {
             <Route path="/gems" element={<Lyrical />} />
             <Route path="/gems/:id" element={<Collection />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/prospector" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ErrorBoundary>

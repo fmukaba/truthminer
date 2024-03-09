@@ -13,7 +13,7 @@ export const Container = styled.div`
   position: fixed;
   z-index: 100;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1024px) {
     padding: 40px 60px;
   }
 `;

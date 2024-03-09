@@ -38,8 +38,8 @@ const Navbar = () => {
             <NavLink to="/gold" onClick={handleTabClick}>
               Gold
             </NavLink>
-            <NavLink to="/prospector" onClick={handleTabClick}>
-              Prospector
+            <NavLink to="/about" onClick={handleTabClick}>
+              About
             </NavLink>
           </MobileNav>
         )}
@@ -58,8 +58,8 @@ const Navbar = () => {
           <NavLink to="/gold" onClick={handleTabClick}>
             Gold
           </NavLink>
-          <NavLink to="/prospector" onClick={handleTabClick}>
-            Prospector
+          <NavLink to="/about" onClick={handleTabClick}>
+            About
           </NavLink>
         </TabsContainer>
         <RightSide>
