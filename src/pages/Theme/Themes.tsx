@@ -38,17 +38,6 @@ const PdfItem = styled.div`
   }
 `;
 
-const VerticalDivider = styled.div`
-  display: none;
-  height: 100%;
-  width: 1px;
-  background-color: #ccc;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-`;
-
 const PdfIcon = styled(AiOutlineFilePdf)`
   font-size: 32px;
   margin-right: 12px;
