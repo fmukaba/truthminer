@@ -9,6 +9,7 @@ export const PageContent = styled.div<{ mt?: number; mb?: number }>`
   top: calc(15vh + 144px);
   margin-left: 120px;
   margin-right: 120px;
+
   ${(props) =>
     props.mt &&
     `
@@ -21,7 +22,7 @@ export const PageContent = styled.div<{ mt?: number; mb?: number }>`
   `}
   
    
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1024px) {
     margin-left: 60px;
     margin-right: 60px;
   }

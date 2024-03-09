@@ -38,12 +38,12 @@ const Navbar = () => {
             <NavLink to="/gold" onClick={handleTabClick}>
               Gold
             </NavLink>
-            <NavLink to="/prospector" onClick={handleTabClick}>
-              Prospector
+            <NavLink to="/about" onClick={handleTabClick}>
+              About
             </NavLink>
           </MobileNav>
         )}
-        <Link to="/articles">
+        <Link to="/nuggets">
           <LogoWrapper>
             <img src={logo} alt="Logo" />
           </LogoWrapper>
@@ -58,8 +58,8 @@ const Navbar = () => {
           <NavLink to="/gold" onClick={handleTabClick}>
             Gold
           </NavLink>
-          <NavLink to="/prospector" onClick={handleTabClick}>
-            Prospector
+          <NavLink to="/about" onClick={handleTabClick}>
+            About
           </NavLink>
         </TabsContainer>
         <RightSide>

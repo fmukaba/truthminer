@@ -9,8 +9,8 @@ const About: FC = () => {
   return (
     <Layout>
       <PageHeader
-        title="Prospector"
-        description="A person who searches for valuable substances from the Word of God"
+        title="Truth Miner"
+        description="A person who searches for valuable substance from the Word of God"
       />
       <PageContent mt={20}>
         <MainContent>
