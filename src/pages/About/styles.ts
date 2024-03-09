@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const MainContent = styled.div`
   display: flex;
-  flex-direction: row;
-
   @media (max-width: 600px) {
     flex-direction: column; 
 `;
 
 export const ImageWrapper = styled.div`
+  margin-right: 10px;
   img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
   }
@@ -18,4 +17,5 @@ export const ImageWrapper = styled.div`
 
 export const TextWrapper = styled.div`
   flex: 1;
+  font-family: NB International Pro;
 `;

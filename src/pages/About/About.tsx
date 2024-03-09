@@ -15,7 +15,7 @@ const About: FC = () => {
       <PageContent mt={20}>
         <MainContent>
           <ImageWrapper>
-            <img src={prospectorImg} alt="Prospector" />
+            <img src={prospectorImg} alt="the prospector" />
           </ImageWrapper>
           <TextWrapper>
             About me. I am a software engineer About me. I am a software
@@ -27,7 +27,8 @@ const About: FC = () => {
             me. I am a software engineer About me. I am a software engineer
             About me. I am a software engineer About me. I am a software
             engineer About me. I am a software engineer About me. I am a
-            software engineer
+            software engineer Grab your tools/helmet and come dig some of this
+            'good stuff' with me
           </TextWrapper>
         </MainContent>
       </PageContent>

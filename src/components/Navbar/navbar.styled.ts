@@ -15,7 +15,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-
+  justify-content: space-between;
   .icon-wrapper {
     display: flex;
     align-items: center;
@@ -40,6 +40,7 @@ export const LogoWrapper = styled.div`
 `;
 export const TabsContainer = styled.div`
   display: flex;
+  gap: 10px;
   margin-left: 50px;
   @media (max-width: 600px) {
     display: none;
@@ -59,9 +60,7 @@ export const TabsContainer = styled.div`
   }
 `;
 export const RightSide = styled.div`
-  display: flex;
-  align-items: flex-end;
-  margin-left: auto;
+  margin-left: 20px;
 `;
 
 export const HamburgerIcon = styled.div`
