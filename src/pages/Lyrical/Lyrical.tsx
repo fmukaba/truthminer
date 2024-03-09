@@ -1,41 +1,19 @@
 import { FC, Fragment, useContext, useState } from "react";
 import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import { PageContent } from "../../components";
 import { FirestoreContext } from "../../context/Context";
 import { Lyrical as LyricalType } from "../../interfaces";
 import Card from "../../components/Card/Card";
-import { FiltersContainer, GridWrapper } from "./styles";
-import { PageContent } from "../../components";
-import styled from "styled-components";
+import {
+  FilterButton,
+  FiltersContainer,
+  FiltersGrid,
+  GridWrapper,
+  StyledRowDivider,
+} from "./styles";
 
-export const StyledRowDivider = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: #eeeeee;
-  grid-column: span 3;
-  margin: 10px 0;
-
-  @media (max-width: 1024px) {
-    display: none !important;
-  }
-`;
-
-const FilterButton = styled.button<{ active: boolean }>`
-  margin: 10px;
-  padding: 5px 15px;
-  cursor: pointer;
-  border: 1px solid #aaa;
-  background: none;
-  border-radius: 20px;
-
-  ${(props) =>
-    props.active &&
-    `
-      background-color: #ccc;
-    `}
-`;
-
-const types = ["All", "Spoken Word", "Rap", "Poem"];
+const types = ["All", "Rap", "Poem", "Spoken Word"];
 
 const Lyrical: FC = () => {
   const data = useContext(FirestoreContext);
@@ -51,22 +29,23 @@ const Lyrical: FC = () => {
   return (
     <Layout>
       <PageHeader
-        title="Lyrical"
-        description="A collection of short writings that express prayer and worship."
+        title="Gems"
+        description="A collection of short writings that express prayer and worship." //or leisure? like rap
       />
       <PageContent>
         <FlexBox flexDirection="column">
           <FiltersContainer>
-            Filter by:
-            {types.map((type) => (
-              <FilterButton
-                key={type}
-                active={selectedType === type}
-                onClick={() => setSelectedType(type)}
-              >
-                {type}
-              </FilterButton>
-            ))}
+            <FiltersGrid>
+              {types.map((type) => (
+                <FilterButton
+                  key={type}
+                  active={selectedType === type}
+                  onClick={() => setSelectedType(type)}
+                >
+                  {type}
+                </FilterButton>
+              ))}
+            </FiltersGrid>
           </FiltersContainer>
           <GridWrapper>
             {filteredLyricals.map((el: LyricalType, index: number) => {

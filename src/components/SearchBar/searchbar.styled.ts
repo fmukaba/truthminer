@@ -7,6 +7,9 @@ export const SearchBarContainer = styled.div`
   align-items: center;
   display: inline-flex;
   position: relative;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const IconWrapper = styled.div`

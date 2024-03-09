@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext } from "react";
+import { FC, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { PageContent } from "../../components";
 import { FlexBox, Layout } from "../../components/Layout";
@@ -12,8 +12,8 @@ import {
   Footer,
   StyledColumnDivider,
 } from "./styles";
-import { StyledRowDivider } from "../Lyrical/Lyrical";
 import { Timestamp } from "@firebase/firestore";
+import { StyledRowDivider } from "../Lyrical/styles";
 
 export const timestampConverter = (date_published: Timestamp) => {
   const monthNames = [
@@ -45,7 +45,7 @@ const ArticleItem: FC<Article> = ({
 }) => {
   const navigate = useNavigate();
   const goToArticle = (id: string) => {
-    navigate(`/articles/${id}`);
+    navigate(`/nuggets/${id}`);
   };
 
   return (
@@ -53,6 +53,7 @@ const ArticleItem: FC<Article> = ({
       <Title> {title} </Title>
       <Description>{description}</Description>
       <Footer>{timestampConverter(date_published)}</Footer>
+      <StyledRowDivider />
     </Container>
   );
 };
@@ -62,22 +63,20 @@ const ArticleList = ({ articles }: { articles: Article[] }) => {
     <FlexBox
       flexDirection="column"
       align-items="flex-start"
-      mt={70}
+      mt={30}
       mb={70}
-      gap={70}
+      gap={40}
     >
       {articles.map((article) => {
         return (
-          <Fragment key={article.id}>
-            <ArticleItem
-              id={article.id}
-              title={article.title}
-              date_published={article.date_published}
-              description={article.description}
-              content={article.content}
-            />
-            <StyledRowDivider />
-          </Fragment>
+          <ArticleItem
+            key={article.id}
+            id={article.id}
+            title={article.title}
+            date_published={article.date_published}
+            description={article.description}
+            content={article.content}
+          />
         );
       })}
     </FlexBox>
@@ -89,7 +88,10 @@ const Articles: FC = () => {
 
   return (
     <Layout>
-      <PageHeader title="Articles" />
+      <PageHeader
+        title="Nuggets"
+        description="Short pieces of writing based on truth to exhort and encourage prospectors"
+      />
       <PageContent>
         <FlexBox>
           <ArticleList articles={data.articles} />

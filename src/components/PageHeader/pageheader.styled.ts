@@ -12,11 +12,15 @@ export const Container = styled.div`
   flex-wrap: wrap;
   position: fixed;
   z-index: 100;
+
+  @media screen and (max-width: 600px) {
+    padding: 40px 60px;
+  }
 `;
 
 export const Title = styled.div`
   width: 100%;
-  height: 67px;
+  height: 10vh;
   font-family: "NB International Pro";
   font-style: normal;
   font-weight: 400;
@@ -26,6 +30,7 @@ export const Title = styled.div`
 `;
 
 export const Description = styled.div`
-  height: 31px;
-  width: 100%;
+  max-height: 5vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
