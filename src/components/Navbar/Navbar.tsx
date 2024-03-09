@@ -43,7 +43,7 @@ const Navbar = () => {
             </NavLink>
           </MobileNav>
         )}
-        <Link to="/articles">
+        <Link to="/nuggets">
           <LogoWrapper>
             <img src={logo} alt="Logo" />
           </LogoWrapper>
