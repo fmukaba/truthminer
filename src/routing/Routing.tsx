@@ -33,6 +33,7 @@ const Routing = () => {
 
   const getData = useCallback(async () => {
     console.log("fetching data...");
+    // eslint-disable-next-line
     data = await awaitFirestoreData();
     setFirestoreData(data);
     setIsDataloaded(true);
