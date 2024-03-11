@@ -7,6 +7,10 @@ export const Container = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    width: 70vw;
+  }
 `;
 
 export const Title = styled.div`
@@ -71,7 +75,21 @@ export const Content = styled.div`
 `;
 
 export const StyledColumnDivider = styled.div`
-  height: 100%;
+  margin-top: 30px;
+  margin-left: 100px;
+  height: 50vh;
   width: 1px;
   background-color: #eee;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+export const MustRead = styled.div`
+  margin-left: 20px;
+  margin-top: 30px;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;

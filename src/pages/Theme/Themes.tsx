@@ -6,6 +6,8 @@ import { PageContent } from "../../components";
 import styled from "styled-components";
 import { AiOutlineFilePdf } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
+// @ts-ignore
+import pdfData from "../../assets/False_Teachers_and_Prophets.pdf";
 
 const GridContainer = styled.div`
   display: grid;
@@ -36,6 +38,11 @@ const PdfItem = styled.div`
     width: 70vw;
     margin-right: 10px;
   }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 `;
 
 const PdfIcon = styled(AiOutlineFilePdf)`
@@ -61,18 +68,17 @@ const DownloadIcon = styled(FiDownload)`
 
 const Themes: FC = () => {
   const pdfs = [
-    { id: 1, title: "Sample PDF 1" },
-    { id: 22, title: "Sample PDF 2" },
-    { id: 214, title: "Sample PDF 3" },
-    { id: 2312, title: "Sample PDF 2zc" },
-    { id: 2132, title: "Sample PDF 2das" },
-    { id: 2132, title: "Sample PDF 2wer" },
-    { id: 21332, title: "Sample PDF 2wre" },
-    { id: 232, title: "Sample PDF rwe2" },
-    { id: 213232, title: "Sample PDF 2rwe" },
-    { id: 254, title: "Sample PDF 2rwe" },
-    { id: 287, title: "Sample PDF 2ewr" },
-    { id: 20, title: "Sample PDF 2jgkh" },
+    {
+      id: 1,
+      title: "False Teachers and Prophets",
+      path: "False_Teachers_and_Prophets.pdf",
+    },
+    { id: 2, title: "Sample PDF 2" },
+    { id: 3, title: "Sample PDF 3" },
+    { id: 4, title: "Sample PDF 2zc" },
+    { id: 5, title: "Sample PDF 2das" },
+    { id: 6, title: "Sample PDF 2wer" },
+    { id: 7, title: "Sample PDF 2wre" },
   ];
 
   // const handleDivClick = (title: string) => {
@@ -89,13 +95,17 @@ const Themes: FC = () => {
       />
       <PageContent>
         <GridContainer>
-          {pdfs.map((pdf, index) => (
+          {pdfs.map((pdf) => (
             <>
               <PdfItem key={pdf.id}>
                 <PdfIcon />
                 <TitleContainer>
-                  <Title>{pdf.title}</Title>
-                  <DownloadIcon />
+                  <a href={pdfData} target="blank">
+                    <Title>{pdf.title}</Title>
+                  </a>
+                  <a href={pdfData} download>
+                    <DownloadIcon />
+                  </a>
                 </TitleContainer>
               </PdfItem>
             </>

@@ -6,6 +6,7 @@ export interface Article {
   content: string;
   description: string;
   date_published: Timestamp;
+  isFavorite?: boolean;
 }
 
 export interface Theme {

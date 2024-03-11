@@ -1,4 +1,3 @@
-// import { Suspense, lazy, useEffect } from "react";
 import { useCallback, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";

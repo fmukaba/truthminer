@@ -16,6 +16,7 @@ export const getArticles = async () => {
         doc.data().date_published.seconds,
         doc.data().date_published.nanoseconds
       ),
+      isFavorite: doc.data().isFavorite,
     };
     articles.push(article);
   });
