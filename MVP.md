@@ -1,6 +1,5 @@
 MVP:
-
-Integrated PDFs
+Polish everything
 Few content polished and pushed
 Publish website on the Web
 

@@ -1,4 +1,3 @@
-import Searchbar from "../SearchBar/SearchBar";
 import logo from "../../assets/favicon.png";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
@@ -66,7 +65,7 @@ const Navbar = () => {
           <HamburgerIcon onClick={handleHamburgerClick}>
             <FaBars size={25} />
           </HamburgerIcon>
-          <Searchbar />
+          {/* <Searchbar /> */}
         </RightSide>
       </NavbarContainer>
       {isNavOpen && <div style={{ height: "150px" }} />}

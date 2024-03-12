@@ -1,6 +1,5 @@
-import { Article, Lyrical, Theme } from "./models";
+import { Article, Lyrical } from "./models";
 export interface FirestoreData {
-    articles: Article[];
-    lyricals: Lyrical[];
-    themes: Theme[];
+  articles: Article[];
+  lyricals: Lyrical[];
 }

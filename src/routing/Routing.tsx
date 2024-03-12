@@ -15,7 +15,6 @@ import {
   Books,
   Collection,
   Lyrical,
-  Theme,
   Themes,
 } from "../pages";
 
@@ -23,7 +22,6 @@ const Routing = () => {
   let data: FirestoreData = {
     articles: [],
     lyricals: [],
-    themes: [],
   };
 
   const [firestoreData, setFirestoreData] = useState(data);
@@ -61,7 +59,6 @@ const Routing = () => {
             <Route path="/nuggets" element={<Articles />} />
             <Route path="/nuggets/:id" element={<Article />} />
             <Route path="/gold" element={<Themes />} />
-            <Route path="/gold/:id" element={<Theme />} />
             <Route path="/gems" element={<Lyrical />} />
             <Route path="/gems/:id" element={<Collection />} />
             <Route path="/books" element={<Books />} />

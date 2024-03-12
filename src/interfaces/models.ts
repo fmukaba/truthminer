@@ -9,13 +9,6 @@ export interface Article {
   isFavorite?: boolean;
 }
 
-export interface Theme {
-  id: string;
-  title: string;
-  content: string;
-  date_published: Timestamp;
-}
-
 export interface Lyrical {
   id: string;
   title: string;

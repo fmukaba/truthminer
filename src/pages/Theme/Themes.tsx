@@ -1,13 +1,16 @@
-import { FC, useContext } from "react";
+import { FC, Fragment } from "react";
 import { Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { FirestoreContext } from "../../context/Context";
 import { PageContent } from "../../components";
 import styled from "styled-components";
 import { AiOutlineFilePdf } from "react-icons/ai";
 import { FiDownload } from "react-icons/fi";
-// @ts-ignore
-import pdfData from "../../assets/False_Teachers_and_Prophets.pdf";
+// Temporarily storing pdfs as assets
+import falseTeachersData from "../../assets/False_Teachers_and_Prophets.pdf";
+import surrenderData from "../../assets/Surrender.pdf";
+import waitingData from "../../assets/Waiting_on_God.pdf";
+import sufferingData from "../../assets/Suffering.pdf";
+import memorizingData from "../../assets/Bible_Verses.pdf";
 
 const GridContainer = styled.div`
   display: grid;
@@ -71,44 +74,38 @@ const Themes: FC = () => {
     {
       id: 1,
       title: "False Teachers and Prophets",
-      path: "False_Teachers_and_Prophets.pdf",
+      data: falseTeachersData,
     },
-    { id: 2, title: "Sample PDF 2" },
-    { id: 3, title: "Sample PDF 3" },
-    { id: 4, title: "Sample PDF 2zc" },
-    { id: 5, title: "Sample PDF 2das" },
-    { id: 6, title: "Sample PDF 2wer" },
-    { id: 7, title: "Sample PDF 2wre" },
+    { id: 2, title: "Surrenderring", data: surrenderData },
+    { id: 3, title: "Waiting on God", data: waitingData },
+    { id: 4, title: "Suffering", data: sufferingData },
+    { id: 5, title: "Memorization", data: memorizingData },
   ];
 
-  // const handleDivClick = (title: string) => {
-  //   console.log(`Clicked on ${title}`);
-  // };
-
-  const data = useContext(FirestoreContext);
-  console.log(data.themes);
   return (
     <Layout>
       <PageHeader
         title="Gold"
-        description="What the Bible says on different topics"
+        description="A sample of what the Bible says on different topics, in hope to stir you up to study the Scriptures"
       />
       <PageContent>
         <GridContainer>
           {pdfs.map((pdf) => (
-            <>
+            <Fragment>
               <PdfItem key={pdf.id}>
-                <PdfIcon />
+                <a href={pdf.data} target="_blank" rel="noreferrer">
+                  <PdfIcon />
+                </a>
                 <TitleContainer>
-                  <a href={pdfData} target="blank">
+                  <a href={pdf.data} target="_blank" rel="noreferrer">
                     <Title>{pdf.title}</Title>
                   </a>
-                  <a href={pdfData} download>
-                    <DownloadIcon />
+                  <a href={pdf.data} download>
+                    <DownloadIcon size={22} />
                   </a>
                 </TitleContainer>
               </PdfItem>
-            </>
+            </Fragment>
           ))}
         </GridContainer>
       </PageContent>

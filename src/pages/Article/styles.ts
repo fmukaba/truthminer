@@ -75,7 +75,7 @@ export const Content = styled.div`
 `;
 
 export const StyledColumnDivider = styled.div`
-  margin-top: 30px;
+  margin-top: 40px;
   margin-left: 100px;
   height: 50vh;
   width: 1px;
@@ -87,6 +87,7 @@ export const StyledColumnDivider = styled.div`
 `;
 
 export const MustRead = styled.div`
+  display: none;
   margin-left: 20px;
   margin-top: 30px;
   @media screen and (max-width: 1024px) {

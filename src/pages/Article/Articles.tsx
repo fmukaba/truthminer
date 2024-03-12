@@ -7,14 +7,7 @@ import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { FirestoreContext } from "../../context/Context";
 import { Article } from "../../interfaces";
-import {
-  Container,
-  Description,
-  Title,
-  Footer,
-  StyledColumnDivider,
-  MustRead,
-} from "./styles";
+import { Container, Description, Title, Footer } from "./styles";
 
 import { StyledRowDivider } from "../Lyrical/styles";
 
@@ -51,7 +44,7 @@ const ArticleItem: FC<Article> = ({
   const goToArticle = (id: string) => {
     navigate(`/nuggets/${id}`);
   };
-  console.log(isFavorite);
+
   return (
     <Container onClick={() => goToArticle(id)}>
       <Title>
@@ -103,10 +96,10 @@ const Articles: FC = () => {
       <PageContent>
         <FlexBox>
           <ArticleList articles={data.articles} />
-          <StyledColumnDivider />
+          {/* <StyledColumnDivider />
           <MustRead>
             <h1> Must Read </h1>
-          </MustRead>
+          </MustRead> */}
         </FlexBox>
       </PageContent>
     </Layout>
