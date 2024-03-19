@@ -13,20 +13,18 @@ import sufferingData from "../../assets/Suffering.pdf";
 import memorizingData from "../../assets/Bible_Verses.pdf";
 
 const GridContainer = styled.div`
-  display: grid;
-  grid-gap: 30px 100px;
-  grid-template-columns: repeat(2, 45%);
-  margin-bottom: 100px;
-  margin-top: 50px;
-
-  @media screen and (max-width: 1024px) {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 50px;
+  @media only screen and (min-width: 1025px) {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 40px 90px;
   }
 `;
 
 const PdfItem = styled.div`
-  width: 35vw;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -34,17 +32,20 @@ const PdfItem = styled.div`
   cursor: pointer;
   align-items: center;
   border: 1px solid #ccc;
-  padding: 16px;
+  padding: 15px;
   position: relative;
 
-  @media screen and (max-width: 1024px) {
-    width: 70vw;
-    margin-right: 10px;
+  width: 70vw;
+  @media only screen and (min-width: 1025px) {
+    width: 35vw;
   }
 
   a {
     color: black;
     text-decoration: none;
+    &:hover {
+      color: gray;
+    }
   }
 `;
 
@@ -86,26 +87,24 @@ const Themes: FC = () => {
     <Layout>
       <PageHeader
         title="Gold"
-        description="A sample of what the Bible says on different topics, in hope to stir you up to study the Scriptures"
+        description="A sample of topical studies from the Bible to stir you up to study the Scriptures"
       />
-      <PageContent>
+      <PageContent mt={30} mb={100}>
         <GridContainer>
           {pdfs.map((pdf) => (
-            <Fragment>
-              <PdfItem key={pdf.id}>
+            <PdfItem key={pdf.id}>
+              <a href={pdf.data} target="_blank" rel="noreferrer">
+                <PdfIcon />
+              </a>
+              <TitleContainer>
                 <a href={pdf.data} target="_blank" rel="noreferrer">
-                  <PdfIcon />
+                  <Title>{pdf.title}</Title>
                 </a>
-                <TitleContainer>
-                  <a href={pdf.data} target="_blank" rel="noreferrer">
-                    <Title>{pdf.title}</Title>
-                  </a>
-                  <a href={pdf.data} download>
-                    <DownloadIcon size={22} />
-                  </a>
-                </TitleContainer>
-              </PdfItem>
-            </Fragment>
+                <a href={pdf.data} download>
+                  <DownloadIcon size={22} />
+                </a>
+              </TitleContainer>
+            </PdfItem>
           ))}
         </GridContainer>
       </PageContent>

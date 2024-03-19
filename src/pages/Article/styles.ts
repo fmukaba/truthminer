@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 55vw;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     width: 70vw;
   }
 `;
@@ -72,6 +71,13 @@ export const Content = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+`;
+export const StyledRowDivider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #eeeeee;
+  grid-column: span 3;
+  margin: 10px 0;
 `;
 
 export const StyledColumnDivider = styled.div`

@@ -22,8 +22,7 @@ const Lyrical: FC = () => {
     selectedType === "All"
       ? data.lyricals
       : data.lyricals.filter(
-          (lyrical) =>
-            lyrical.type.toLocaleLowerCase() === selectedType.toLowerCase()
+          (lyrical) => lyrical.type.toLowerCase() === selectedType.toLowerCase()
         );
 
   return (

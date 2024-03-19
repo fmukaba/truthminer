@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "react-error-boundary";
 import { FallBack, NotFound, Spacer } from "../components";
@@ -55,14 +55,14 @@ const Routing = () => {
       ) : (
         <ErrorBoundary FallbackComponent={FallBack} resetKeys={[location]}>
           <Routes>
-            <Route path="/" element={<Articles />} />
+            <Route path="/" element={<Navigate to="/nuggets" />} />
             <Route path="/nuggets" element={<Articles />} />
             <Route path="/nuggets/:id" element={<Article />} />
             <Route path="/gold" element={<Themes />} />
             <Route path="/gems" element={<Lyrical />} />
             <Route path="/gems/:id" element={<Collection />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/prospector" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ErrorBoundary>

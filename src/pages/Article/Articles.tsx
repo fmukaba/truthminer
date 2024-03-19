@@ -7,9 +7,13 @@ import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { FirestoreContext } from "../../context/Context";
 import { Article } from "../../interfaces";
-import { Container, Description, Title, Footer } from "./styles";
-
-import { StyledRowDivider } from "../Lyrical/styles";
+import {
+  Container,
+  Description,
+  Title,
+  Footer,
+  StyledRowDivider,
+} from "./styles";
 
 export const timestampConverter = (date_published: Timestamp) => {
   const monthNames = [
@@ -65,7 +69,7 @@ const ArticleList = ({ articles }: { articles: Article[] }) => {
       align-items="flex-start"
       mt={30}
       mb={70}
-      gap={40}
+      gap={30}
     >
       {articles.map((article) => {
         return (
@@ -91,7 +95,7 @@ const Articles: FC = () => {
     <Layout>
       <PageHeader
         title="Nuggets"
-        description="Short pieces of writing based on truth to exhort and encourage prospectors"
+        description="Short pieces of writing to exhort prospectors on their journey."
       />
       <PageContent>
         <FlexBox>
