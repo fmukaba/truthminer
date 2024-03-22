@@ -9,6 +9,7 @@ export const PageContent = styled.div<{ mt?: number; mb?: number }>`
   top: 264px;
   margin-left: 30px;
   margin-right: 30px;
+  padding-bottom: 100px;
 
   ${(props) =>
     props.mt &&
@@ -22,12 +23,12 @@ export const PageContent = styled.div<{ mt?: number; mb?: number }>`
       margin-bottom: ${props.mb}px;
   `}
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     margin-left: 60px;
     margin-right: 60px;
   }
 
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 1024px) {
     margin-left: 120px;
     margin-right: 120px;
   }

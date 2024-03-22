@@ -8,6 +8,7 @@ const Collection: FC = () => {
   const data = useContext(FirestoreContext);
   const { id } = useParams();
   let targetLyrical = data.lyricals.find((element) => element.id === id);
+  window.scrollTo(0, 0);
 
   return targetLyrical ? (
     <Container>

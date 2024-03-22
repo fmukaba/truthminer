@@ -13,7 +13,7 @@ export const FilterText = styled.div`
   display: flex;
   margin: auto;
   justify-content: center;
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -54,12 +54,12 @@ export const GridWrapper = styled.div`
   margin-bottom: 100px;
   margin-top: 70px;
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 45%);
   }
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(3, 30%);
   }

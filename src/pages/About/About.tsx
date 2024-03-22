@@ -20,9 +20,9 @@ const About: FC = () => {
           <TextWrapper>
             Hello there, my name is Francois Mukaba and I am a prospector.
             <br /> <br />
-            I love wealth, not the perishable type no, no ! The Lord of the land
-            has given me access to his huge field and I've been on this journey
-            to find precious stones for little bit now.
+            I love wealth! Not the perishable type, no, no ! The Lord of the
+            land has graciously given me access to his huge field and I've been
+            on this journey to find precious stones for little bit now.
             <br /> <br />
             I am very incline to share my findings with other prospectors or
             anyone interested or wondering about this path. Everytime I

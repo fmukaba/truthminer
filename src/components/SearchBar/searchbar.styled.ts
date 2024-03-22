@@ -7,7 +7,7 @@ export const SearchBarContainer = styled.div`
   align-items: center;
   display: inline-flex;
   position: relative;
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;

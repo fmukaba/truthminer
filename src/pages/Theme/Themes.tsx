@@ -17,7 +17,7 @@ const GridContainer = styled.div`
   flex-direction: column;
   gap: 25px;
   margin-bottom: 50px;
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(2, 45%);
     gap: 40px 90px;
@@ -36,7 +36,7 @@ const PdfItem = styled.div`
   position: relative;
 
   width: 70vw;
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 1024px) {
     width: 35vw;
   }
 

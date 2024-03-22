@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   cursor: pointer;
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 1024px) {
     width: 70vw;
   }
 `;

@@ -16,12 +16,12 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   margin: 45px 30px;
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     margin-left: 60px;
     margin-right: 60px;
   }
 
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 1024px) {
     margin-left: 120px;
     margin-right: 120px;
   }
@@ -34,7 +34,7 @@ export const Title = styled.div`
   font-size: 46px;
   color: #333335;
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     font-size: 56px;
   }
 `;
