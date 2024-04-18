@@ -48,6 +48,7 @@ export const Footer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
+  text-align: center;
   font-family: NB International Pro;
   font-size: 50px;
   font-style: normal;
