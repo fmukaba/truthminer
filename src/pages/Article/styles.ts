@@ -50,18 +50,25 @@ export const Footer = styled.div`
 export const TitleContainer = styled.div`
   text-align: center;
   font-family: NB International Pro;
-  font-size: 50px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
+  @media only screen and (min-width: 768px) {
+    font-size: 50px;
+  }
 `;
 
 export const ArticleContainer = styled.div`
   position: absolute;
   top: 20%;
   padding: 10px;
-  margin-left: 18%;
-  margin-right: 18%;
+  margin-left: 5%;
+  margin-right: 5%;
+  @media only screen and (min-width: 768px) {
+    margin-left: 18%;
+    margin-right: 18%;
+  }
 `;
 
 export const Content = styled.div`
