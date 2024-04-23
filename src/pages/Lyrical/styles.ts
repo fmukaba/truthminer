@@ -66,9 +66,8 @@ export const GridWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 20%;
   padding: 10px;
+  margin-top: 70px;
   margin-left: 18%;
   margin-right: 18%;
 `;
