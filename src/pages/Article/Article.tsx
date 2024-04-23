@@ -13,7 +13,7 @@ const ArticlePage: FC = () => {
   return targetArticle ? (
     <ArticleContainer>
       <TitleContainer> {targetArticle.title} </TitleContainer>
-      <Content dangerouslySetInnerHTML={{ __html: targetArticle.content}}/>
+      <Content dangerouslySetInnerHTML={{ __html: targetArticle.content }}/>
     </ArticleContainer>
   ) : (
     <NotFound />
