@@ -14,7 +14,7 @@ const Collection: FC = () => {
     <Container>
       <Type> {targetLyrical.type.toUpperCase()} </Type>
       <Title> {targetLyrical.title} </Title>
-      <Content dangerouslySetInnerHTML={{ __html: targetLyrical.content }} />
+      <Content dangerouslySetInnerHTML={{ __html: targetLyrical.html }} />
     </Container>
   ) : (
     <NotFound />

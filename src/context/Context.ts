@@ -31,6 +31,7 @@ export const getLyricals = async () => {
       content: doc.data().content,
       title: doc.data().title,
       type: doc.data().type,
+      html: doc.data().html,
       date_published: new Timestamp(
         doc.data().date_published.seconds,
         doc.data().date_published.nanoseconds

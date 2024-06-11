@@ -14,5 +14,6 @@ export interface Lyrical {
   title: string;
   type: string;
   content: string;
+  html: string;
   date_published: Timestamp;
 }

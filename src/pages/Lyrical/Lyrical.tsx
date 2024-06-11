@@ -13,7 +13,7 @@ import {
   StyledRowDivider,
 } from "./styles";
 
-const types = ["All", "Rap", "Poem", "Spoken Word"];
+const types = ["All", "Poem", "Spoken Word"];
 
 const Lyrical: FC = () => {
   const data = useContext(FirestoreContext);
@@ -63,6 +63,7 @@ const Lyrical: FC = () => {
                     type={el.type}
                     content={el.content}
                     date_published={el.date_published}
+                    html={el.html}
                   />
                   {(index + 1) % 3 === 0 &&
                     index + 1 !== filteredLyricals.length && (
