@@ -7,9 +7,9 @@ import { Container, Content, Title, Type } from "../Lyrical/styles";
 const Collection: FC = () => {
   const data = useContext(FirestoreContext);
   const { id } = useParams();
-  let targetLyrical = data.lyricals.find((element) => element.id === id);
-  window.scrollTo(0, 0);
-
+  let targetLyrical = data.lyricals.find((element) => element.id === id);  
+  window.scrollTo(0, 0); 
+  
   return targetLyrical ? (
     <Container>
       <Type> {targetLyrical.type.toUpperCase()} </Type>

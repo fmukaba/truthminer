@@ -18,25 +18,13 @@ const About: FC = () => {
             <img src={prospectorImg} alt="the prospector" />
           </ImageWrapper>
           <TextWrapper>
-            Hello there, my name is Francois Mukaba and I am a prospector.
-            <br /> <br />
-            I love wealth! Not the perishable type, no, no ! The Lord of the
-            land has graciously given me access to his huge field and I've been
-            on this journey to find precious stones for little bit now.
-            <br /> <br />
-            I am very incline to share my findings with other prospectors or
-            anyone interested or wondering about this path. Everytime I
-            discovered some 'good stuffs' in life, the Lord of the land always
-            told me: this is not just for you. Make sure you share with others.
-            Every good and precious stones comes from the Lord of the Land. And
-            He delights in giving it to the children of men. My hope is to share
-            what He has given me, in hope to stir you to go find more and even
-            more in His field. A great prospector before us once said in his
-            letter: "We don't live to ourselves but to him who died and rose
-            again" What a delight it is to live for this King and learn from
-            him.
-            <br /> <br />
-            So, grab your tools, and let's go deep (pun-intended)...
+          
+  Greetings! I'm Francois Mukaba, a dedicated prospector on a quest for treasures beyond measure.<br/><br/>
+  Driven by a passion for wealth—not of the perishable kind, mind you, but the enduring riches bestowed by the Lord of the land—I've embarked on a journey through His vast fields, seeking precious stones of wisdom, insight, and inspiration.<br/><br/>
+  Along the way, I've discovered that these treasures are not meant for hoarding but for sharing generously with fellow prospectors and anyone intrigued by the path I tread. Each time I uncover a gem in life, I'm reminded of the Lord's instruction: "This is not just for you. Make sure you share with others." Indeed, every good and precious stone originates from the benevolent hand of the Lord, who delights in bestowing His gifts upon humanity.<br/><br/>
+  My aspiration is simple: to share the bountiful treasures I've unearthed in the hope of igniting a spark within you to explore His fields and discover even greater riches. As a wise prospector once said, "We don't live to ourselves but to him who died and rose again." What joy it is to live in service of this King and to glean wisdom from His teachings.<br/><br/>
+  So, dear friend, grab your tools, and let's dig deep into the depths of His boundless riches—pun intended.
+
           </TextWrapper>
         </MainContent>
       </PageContent>

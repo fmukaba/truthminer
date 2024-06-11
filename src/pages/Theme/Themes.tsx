@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import { Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { PageContent } from "../../components";

@@ -1,4 +1,4 @@
-import { FC, Fragment, useContext, useState } from "react";
+import { FC, Fragment, useContext, useEffect, useState } from "react";
 import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { PageContent } from "../../components";
@@ -18,6 +18,11 @@ const types = ["All", "Rap", "Poem", "Spoken Word"];
 const Lyrical: FC = () => {
   const data = useContext(FirestoreContext);
   const [selectedType, setSelectedType] = useState("All");
+  window.scrollTo(0, 0); 
+  useEffect(() => { 
+    window.scrollTo(0, 0);   
+  }, []);
+  
   const filteredLyricals =
     selectedType === "All"
       ? data.lyricals
@@ -29,7 +34,7 @@ const Lyrical: FC = () => {
     <Layout>
       <PageHeader
         title="Gems"
-        description="A collection of short writings that express prayer and worship." //or leisure? like rap
+        description="A collection of short writings that express prayer and worship." 
       />
       <PageContent>
         <FlexBox flexDirection="column">
