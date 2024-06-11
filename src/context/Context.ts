@@ -1,4 +1,4 @@
-import { collection, getDocs, Timestamp } from "@firebase/firestore";
+import { collection, getDocs, Timestamp, doc, getDoc, setDoc, deleteDoc } from "@firebase/firestore";
 import { createContext } from "react";
 import { db } from "../firebase";
 import { FirestoreData } from "../interfaces";
@@ -40,6 +40,29 @@ export const getLyricals = async () => {
     lyricals.push(lyrical);
   });
   return lyricals;
+};
+
+export const renameDoc = async (collection:string, oldName:string, newName:string): Promise<void> => {
+
+  try {
+    // get old doc
+    const docRef = doc(db, collection, oldName);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data exists")
+      const data = docSnap.data();
+      const newDocRef = doc(db, collection, newName);
+
+      // Save the data to 'new name'
+      await setDoc(newDocRef, data);
+
+      // Delete the old document
+      await deleteDoc(docRef);
+    }
+  } catch (error) {
+    console.error("Error renaming document: ", error);
+  }
 };
 
 export const awaitFirestoreData = async () => {
