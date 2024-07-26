@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/truthminer/static/css/main.1c3cee5b.css",
-    "main.js": "/truthminer/static/js/main.1e54b9df.js",
+    "main.js": "/truthminer/static/js/main.d3ac5223.js",
     "static/media/favicon.png": "/truthminer/static/media/favicon.bb0f6b9d3e133c28aa37.png",
     "static/media/prospector2.jpg": "/truthminer/static/media/prospector2.d2933bba67f03f2108ad.jpg",
     "static/media/False_Teachers_and_Prophets.pdf": "/truthminer/static/media/False_Teachers_and_Prophets.b7ed0f1f4db3f951f8fd.pdf",
@@ -11,10 +11,10 @@
     "static/media/Surrender.pdf": "/truthminer/static/media/Surrender.dc83d3a1b34089410268.pdf",
     "index.html": "/truthminer/index.html",
     "main.1c3cee5b.css.map": "/truthminer/static/css/main.1c3cee5b.css.map",
-    "main.1e54b9df.js.map": "/truthminer/static/js/main.1e54b9df.js.map"
+    "main.d3ac5223.js.map": "/truthminer/static/js/main.d3ac5223.js.map"
   },
   "entrypoints": [
     "static/css/main.1c3cee5b.css",
-    "static/js/main.1e54b9df.js"
+    "static/js/main.d3ac5223.js"
   ]
 }
