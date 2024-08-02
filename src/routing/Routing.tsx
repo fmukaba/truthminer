@@ -7,7 +7,7 @@ import { Navbar } from "../components/Navbar";
 import { AppLoader } from "../components/Loader";
 import { awaitFirestoreData, FirestoreContext } from "../context/Context";
 import { FirestoreData } from "../interfaces";
-import icon from "../assets/favicon.png";
+import favicon from "../assets/logo.png";
 import {
   About,
   Article,
@@ -44,7 +44,7 @@ const Routing = () => {
     <FirestoreContext.Provider value={firestoreData}>
       <HelmetProvider>
         <Helmet>
-          <link rel="icon" href={icon} />
+          <link rel="icon" href={favicon} />
           <title>Truth Miner</title>
         </Helmet>
       </HelmetProvider>
