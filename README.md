@@ -1,6 +1,3 @@
-Simple blog for my writings: articles, poems, raps, etc
+Faith-based blog for my writings: articles, poems, raps, etc
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
-
-Uses Firebase firestore for storage. 
-
+Static React & Firestore website hosted [here](https://fmukaba.github.io/truthminer/)

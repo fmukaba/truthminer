@@ -8,4 +8,4 @@ const firebaseConfig = {
     measurementId: "G-MNVWLT5HDD"
   };
 
-  export default firebaseConfig;
+export default firebaseConfig;
