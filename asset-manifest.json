@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/truthminer/static/css/main.1c3cee5b.css",
-    "main.js": "/truthminer/static/js/main.cbb0787c.js",
+    "main.js": "/truthminer/static/js/main.3a88d271.js",
     "static/media/logo.png": "/truthminer/static/media/logo.ad75a4c21786e4171ec7.png",
-    "static/media/favicon.png": "/truthminer/static/media/favicon.bb0f6b9d3e133c28aa37.png",
     "static/media/prospector2.jpg": "/truthminer/static/media/prospector2.d2933bba67f03f2108ad.jpg",
     "static/media/False_Teachers_and_Prophets.pdf": "/truthminer/static/media/False_Teachers_and_Prophets.b7ed0f1f4db3f951f8fd.pdf",
     "static/media/Bible_Verses.pdf": "/truthminer/static/media/Bible_Verses.1f7b174c9de338ac8c18.pdf",
@@ -12,10 +11,10 @@
     "static/media/Surrender.pdf": "/truthminer/static/media/Surrender.dc83d3a1b34089410268.pdf",
     "index.html": "/truthminer/index.html",
     "main.1c3cee5b.css.map": "/truthminer/static/css/main.1c3cee5b.css.map",
-    "main.cbb0787c.js.map": "/truthminer/static/js/main.cbb0787c.js.map"
+    "main.3a88d271.js.map": "/truthminer/static/js/main.3a88d271.js.map"
   },
   "entrypoints": [
     "static/css/main.1c3cee5b.css",
-    "static/js/main.cbb0787c.js"
+    "static/js/main.3a88d271.js"
   ]
 }
