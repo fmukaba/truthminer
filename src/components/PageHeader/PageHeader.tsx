@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Container, Description, Title } from "./pageheader.styled";
+import { Wrapper, Content, Description, Title } from "./pageheader.styled";
 
 type Props = {
   title: string;
@@ -8,12 +8,12 @@ type Props = {
 
 const PageHeader: FC<Props> = ({ ...props }) => {
   return (
-    <Container>
-      <Title>{props.title}</Title>
-      {props.description ? (
-        <Description>{props.description}</Description>
-      ) : null}
-    </Container>
+    <Wrapper>
+      <Content>
+        <Title>{props.title}</Title>
+        {props.description && <Description>{props.description}</Description>}
+      </Content>
+    </Wrapper>
   );
 };
 

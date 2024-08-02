@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FiltersContainer = styled.div`
-  height: 50px;
   width: 100%;
   position: fixed;
   display: flex;
@@ -14,7 +13,7 @@ export const FilterText = styled.div`
   display: flex;
   margin: auto;
   justify-content: center;
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -22,15 +21,16 @@ export const FilterText = styled.div`
 export const FiltersGrid = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 10px;
 
-  @media (max-width: 600px) {
-    flex-wrap: nowrap;
+  @media only screen and (max-width: 320px) {
+    flex-wrap: wrap;
   }
 `;
 
 export const FilterButton = styled.button<{ active: boolean }>`
-  margin: 10px 10px 10px 0px;
+  margin: 15px 0px;
   padding: 5px 10px;
   cursor: pointer;
   border: 1px solid #aaa;
@@ -42,24 +42,32 @@ export const FilterButton = styled.button<{ active: boolean }>`
     `
       background-color: #ccc;
     `}
+
+  @media only screen and (min-width: 400px) {
+    padding: 10px 20px;
+  }
 `;
 
 export const GridWrapper = styled.div`
-  display: grid;
+  display: block;
   grid-gap: 30px;
-  grid-template-columns: repeat(3, 30%);
   margin-bottom: 100px;
   margin-top: 70px;
 
-  @media screen and (max-width: 1024px) {
-    display: block;
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
   }
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 20%;
   padding: 10px;
+  margin-top: 70px;
   margin-left: 18%;
   margin-right: 18%;
 `;

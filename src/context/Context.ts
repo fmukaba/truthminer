@@ -1,8 +1,8 @@
-import { collection, getDocs, Timestamp } from "@firebase/firestore";
+import { collection, getDocs, Timestamp, doc, getDoc, setDoc, deleteDoc } from "@firebase/firestore";
 import { createContext } from "react";
 import { db } from "../firebase";
 import { FirestoreData } from "../interfaces";
-import { Article, Theme, Lyrical } from "../interfaces/models";
+import { Article, Lyrical } from "../interfaces/models";
 
 export const getArticles = async () => {
   const articles: Article[] = [];
@@ -16,27 +16,11 @@ export const getArticles = async () => {
         doc.data().date_published.seconds,
         doc.data().date_published.nanoseconds
       ),
+      isFavorite: doc.data().isFavorite,
     };
     articles.push(article);
   });
   return articles;
-};
-
-export const getThemes = async () => {
-  const themes: Theme[] = [];
-  (await getDocs(collection(db, "themes"))).forEach((doc) => {
-    const theme: Theme = {
-      id: doc.id,
-      content: doc.data().content,
-      title: doc.data().title,
-      date_published: new Timestamp(
-        doc.data().date_published.seconds,
-        doc.data().date_published.nanoseconds
-      ),
-    };
-    themes.push(theme);
-  });
-  return themes;
 };
 
 export const getLyricals = async () => {
@@ -47,6 +31,7 @@ export const getLyricals = async () => {
       content: doc.data().content,
       title: doc.data().title,
       type: doc.data().type,
+      html: doc.data().html,
       date_published: new Timestamp(
         doc.data().date_published.seconds,
         doc.data().date_published.nanoseconds
@@ -57,15 +42,36 @@ export const getLyricals = async () => {
   return lyricals;
 };
 
+export const renameDoc = async (collection:string, oldName:string, newName:string): Promise<void> => {
+
+  try {
+    // get old doc
+    const docRef = doc(db, collection, oldName);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data exists")
+      const data = docSnap.data();
+      const newDocRef = doc(db, collection, newName);
+
+      // Save the data to 'new name'
+      await setDoc(newDocRef, data);
+
+      // Delete the old document
+      await deleteDoc(docRef);
+    }
+  } catch (error) {
+    console.error("Error renaming document: ", error);
+  }
+};
+
 export const awaitFirestoreData = async () => {
   const articles = await getArticles();
   const lyricals = await getLyricals();
-  const themes = await getThemes();
 
   const data: FirestoreData = {
     articles: articles,
     lyricals: lyricals,
-    themes: themes,
   };
   return data;
 };
@@ -73,6 +79,5 @@ export const awaitFirestoreData = async () => {
 let data: FirestoreData = {
   articles: [],
   lyricals: [],
-  themes: [],
 };
 export const FirestoreContext = createContext<FirestoreData>(data);

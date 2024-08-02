@@ -1,8 +1,8 @@
-import Searchbar from "../SearchBar/SearchBar";
-import logo from "../../assets/favicon.png";
+import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import Searchbar from "../SearchBar/SearchBar";
 import {
   LogoWrapper,
   NavbarWrapper,
@@ -38,8 +38,8 @@ const Navbar = () => {
             <NavLink to="/gold" onClick={handleTabClick}>
               Gold
             </NavLink>
-            <NavLink to="/about" onClick={handleTabClick}>
-              About
+            <NavLink to="/prospector" onClick={handleTabClick}>
+              Prospector
             </NavLink>
           </MobileNav>
         )}
@@ -58,8 +58,8 @@ const Navbar = () => {
           <NavLink to="/gold" onClick={handleTabClick}>
             Gold
           </NavLink>
-          <NavLink to="/about" onClick={handleTabClick}>
-            About
+          <NavLink to="/prospector" onClick={handleTabClick}>
+            Prospector
           </NavLink>
         </TabsContainer>
         <RightSide>
@@ -69,7 +69,6 @@ const Navbar = () => {
           <Searchbar />
         </RightSide>
       </NavbarContainer>
-      {isNavOpen && <div style={{ height: "150px" }} />}
     </NavbarWrapper>
   );
 };

@@ -1,5 +1,7 @@
 import { FC, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
+import { Timestamp } from "@firebase/firestore";
 import { PageContent } from "../../components";
 import { FlexBox, Layout } from "../../components/Layout";
 import PageHeader from "../../components/PageHeader/PageHeader";
@@ -10,10 +12,8 @@ import {
   Description,
   Title,
   Footer,
-  StyledColumnDivider,
+  StyledRowDivider,
 } from "./styles";
-import { Timestamp } from "@firebase/firestore";
-import { StyledRowDivider } from "../Lyrical/styles";
 
 export const timestampConverter = (date_published: Timestamp) => {
   const monthNames = [
@@ -42,6 +42,7 @@ const ArticleItem: FC<Article> = ({
   title,
   description,
   date_published,
+  isFavorite,
 }) => {
   const navigate = useNavigate();
   const goToArticle = (id: string) => {
@@ -50,7 +51,10 @@ const ArticleItem: FC<Article> = ({
 
   return (
     <Container onClick={() => goToArticle(id)}>
-      <Title> {title} </Title>
+      <Title>
+        {isFavorite && <FaStar color="gold" size={24} />}
+        {title}
+      </Title>
       <Description>{description}</Description>
       <Footer>{timestampConverter(date_published)}</Footer>
       <StyledRowDivider />
@@ -59,13 +63,14 @@ const ArticleItem: FC<Article> = ({
 };
 
 const ArticleList = ({ articles }: { articles: Article[] }) => {
+  
   return (
     <FlexBox
       flexDirection="column"
       align-items="flex-start"
       mt={30}
       mb={70}
-      gap={40}
+      gap={30}
     >
       {articles.map((article) => {
         return (
@@ -76,6 +81,7 @@ const ArticleList = ({ articles }: { articles: Article[] }) => {
             date_published={article.date_published}
             description={article.description}
             content={article.content}
+            isFavorite={article.isFavorite}
           />
         );
       })}
@@ -90,12 +96,15 @@ const Articles: FC = () => {
     <Layout>
       <PageHeader
         title="Nuggets"
-        description="Short pieces of writing based on truth to exhort and encourage prospectors"
+        description="Short pieces of writing to exhort prospectors on their journey."
       />
       <PageContent>
         <FlexBox>
           <ArticleList articles={data.articles} />
-          <StyledColumnDivider />
+          {/* <StyledColumnDivider />
+          <MustRead>
+            <h1> Must Read </h1>
+          </MustRead> */}
         </FlexBox>
       </PageContent>
     </Layout>

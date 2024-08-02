@@ -6,13 +6,7 @@ export interface Article {
   content: string;
   description: string;
   date_published: Timestamp;
-}
-
-export interface Theme {
-  id: string;
-  title: string;
-  content: string;
-  date_published: Timestamp;
+  isFavorite?: boolean;
 }
 
 export interface Lyrical {
@@ -20,5 +14,6 @@ export interface Lyrical {
   title: string;
   type: string;
   content: string;
+  html: string;
   date_published: Timestamp;
 }

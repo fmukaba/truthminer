@@ -42,7 +42,7 @@ export const TabsContainer = styled.div`
   display: flex;
   gap: 10px;
   margin-left: 50px;
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     display: none;
   }
 
@@ -66,7 +66,7 @@ export const RightSide = styled.div`
 export const HamburgerIcon = styled.div`
   display: none;
   cursor: pointer;
-  @media (max-width: 600px) {
+  @media (max-width: 767px) {
     position: relative;
     right: 15px;
     display: block;

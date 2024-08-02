@@ -1,15 +1,11 @@
-MVP => See wireframe on Figma
+MVP:
+Polish everything
+Few content polished and pushed
+Publish website on the Web
 
-Have a page down button - right corner
+POST MVP features:
 
-sort content by date, show date created
-
-search by title or description
-
-Must read article: Use a star next to article name
-
-Must read section > Need ideas to put there > fun loading zone/area :)
-
-POST MVP:
-
+- Sort content by date, show date created
+- Search by title or description
+- Must read section > Need ideas to put there > fun loading zone/area :)
 - Dark Theme? Yes, later though
