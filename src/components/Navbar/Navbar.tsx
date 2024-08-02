@@ -1,4 +1,4 @@
-import logo from "../../assets/favicon.png";
+import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
